@@ -42,7 +42,7 @@ contract StudentData{
     }
 
     // Fallback function
-    fallback() external payable {
-        emit FallbackCalled(msg.sender, msg.value, msg.data);
+        receive() external payable {
+        emit FallbackCalled(msg.sender, msg.value, "");
     }
 }
